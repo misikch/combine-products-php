@@ -2,6 +2,7 @@
 
 namespace App\Services\CombineProduct\Exceptions;
 
-class CombineProductException extends \Exception {
+class CombineProductException extends \Exception
+{
 
 }

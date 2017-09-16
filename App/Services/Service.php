@@ -5,8 +5,8 @@ namespace App\Services;
 
 use Pimple\Container;
 
-abstract class Service {
-
+abstract class Service
+{
     protected $dic;
 
     public function __construct(Container $container)

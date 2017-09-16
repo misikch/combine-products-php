@@ -8,7 +8,8 @@ use App\Services\CombineProduct\CombineProduct;
 use Pimple\Container;
 use Symfony\Component\Console\Application;
 
-class ConsoleApplication extends Application {
+class ConsoleApplication extends Application
+{
 
 
     /**
@@ -37,7 +38,8 @@ class ConsoleApplication extends Application {
     /**
      * @return Container
      */
-    public function getDIC(): Container {
+    public function getDIC(): Container
+    {
         return $this->dic;
     }
 
@@ -45,7 +47,8 @@ class ConsoleApplication extends Application {
     /**
      * init all dependencies
      */
-    protected function initDependencies() {
+    protected function initDependencies()
+    {
         $dic = $this->dic;
 
         $dic['CombineProductService'] = function () use ($dic) {
@@ -53,28 +56,30 @@ class ConsoleApplication extends Application {
         };
     }
 
-    protected function initCommands() {
-        if(!key_exists('commands', $this->config)) {
+    protected function initCommands()
+    {
+        if (!key_exists('commands', $this->config)) {
             throw new ConsoleApplicationException("The config key 'commands' must be defined");
         }
 
         foreach ($this->config['commands'] as $commandClassName) {
-            if(!class_exists($commandClassName)) {
+            if (!class_exists($commandClassName)) {
                 throw new ConsoleApplicationException("Class with name $commandClassName does not exist");
             }
             $this->add(new $commandClassName);
         }
     }
 
-    protected function initDBPool() {
+    protected function initDBPool()
+    {
         if (!key_exists('databases', $this->config)) {
             throw new ConsoleApplicationException("the config key 'databases' must be defined");
         }
 
         $config = $this->config['databases'];
 
-        $this->dic['dbPool'] = function() use ($config) {
-           return new DBPool($config);
+        $this->dic['dbPool'] = function () use ($config) {
+            return new DBPool($config);
         };
     }
 }

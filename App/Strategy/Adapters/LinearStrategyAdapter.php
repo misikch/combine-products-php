@@ -9,7 +9,6 @@ use App\Values\Product;
 
 class LinearStrategyAdapter implements StrategyInterface
 {
-
     /**
      * @var LinearStrategy
      */

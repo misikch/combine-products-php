@@ -2,6 +2,7 @@
 
 namespace App\Commands\Exceptions\CombineCommand;
 
-class CombineCommandException extends \Exception {
+class CombineCommandException extends \Exception
+{
 
 }

@@ -6,8 +6,8 @@ use App\Factories\Repositories\Product\Interfaces\ProductRepositoryFactoryInterf
 use App\Repositories\Product\CSVProductRepository;
 use App\Repositories\Product\Interfaces\ProductRepositoryInterface;
 
-class CsvProductRepositoryFactory extends ProductRepositoryFactory implements ProductRepositoryFactoryInterface {
-
+class CsvProductRepositoryFactory extends ProductRepositoryFactory implements ProductRepositoryFactoryInterface
+{
 
     public function getProductRepository(): ProductRepositoryInterface
     {

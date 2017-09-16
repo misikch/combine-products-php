@@ -40,23 +40,24 @@ class CombineCommand extends Command
         }
 
         /** @var Container $dic */
-       $dic = $this->getApplication()->getDIC();
+        $dic = $this->getApplication()->getDIC();
         /** @var CombineProduct $combineProductService */
-       $combineProductService = $dic['CombineProductService'];
+        $combineProductService = $dic['CombineProductService'];
 
-       $resultProductList = $combineProductService->combine(
-           (int) $input->getOption('sum'),
-                 $input->getOption('algo'),
-                 $input->getOption('source')
-       );
+        $resultProductList = $combineProductService->combine(
+            (int)$input->getOption('sum'),
+            $input->getOption('algo'),
+            $input->getOption('source')
+        );
 
-       $this->outputResult($resultProductList, $output);
+        $this->outputResult($resultProductList, $output);
 
-       return null;
+        return null;
     }
 
 
-    private function getCombineValidator(): CombineValidator {
+    private function getCombineValidator(): CombineValidator
+    {
         return new CombineValidator();
     }
 

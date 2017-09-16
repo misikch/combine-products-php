@@ -4,7 +4,8 @@ namespace App\Strategy\Interfaces;
 
 use App\Values\Product;
 
-interface StrategyInterface {
+interface StrategyInterface
+{
     /**
      * @param Product[] $inputData
      * @param int $sum

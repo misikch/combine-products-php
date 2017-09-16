@@ -12,7 +12,8 @@ use App\Services\Service;
 use App\Strategy\Interfaces\StrategyInterface;
 use App\Values\Product;
 
-class CombineProduct extends Service {
+class CombineProduct extends Service
+{
 
     /**
      * @param int $sum
@@ -21,13 +22,14 @@ class CombineProduct extends Service {
      * @return Product[]|array
      * @throws CombineProductException
      */
-    public function combine(int $sum, string $algorithm, string $source): array {
+    public function combine(int $sum, string $algorithm, string $source): array
+    {
 
         $productRepository = $this->getProductsRepository($source);
 
         $productsList = $productRepository->getAll();
 
-        if(!$productsList) {
+        if (!$productsList) {
             throw new CombineProductException("Product list is empty.");
         }
 
@@ -41,7 +43,8 @@ class CombineProduct extends Service {
      * @param string $source
      * @return ProductRepositoryInterface
      */
-    public function getProductsRepository(string $source): ProductRepositoryInterface {
+    public function getProductsRepository(string $source): ProductRepositoryInterface
+    {
         $factoryClassName = 'App\\Factories\\Repositories\\Product\\'
             . ucfirst(strtolower($source)) . 'ProductRepositoryFactory';
 
@@ -62,11 +65,12 @@ class CombineProduct extends Service {
     }
 
 
-    public function getStrategyResolver(string $algorithm): StrategyInterface {
+    public function getStrategyResolver(string $algorithm): StrategyInterface
+    {
         $strategyFactoryClassName = 'App\\Factories\\Strategy\\'
             . ucfirst(strtolower($algorithm)) . 'StrategyFactory';
 
-        if(!class_exists($strategyFactoryClassName)) {
+        if (!class_exists($strategyFactoryClassName)) {
             throw new CombineProductServiceInvalidArgumentException("Can't find factory class $strategyFactoryClassName");
         }
 

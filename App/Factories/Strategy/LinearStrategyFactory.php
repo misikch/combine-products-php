@@ -12,6 +12,6 @@ class LinearStrategyFactory implements StrategyFactoryInterface
 {
     public function getStrategy(): StrategyInterface
     {
-       return new LinearStrategyAdapter(new LinearStrategy());
+        return new LinearStrategyAdapter(new LinearStrategy());
     }
 }

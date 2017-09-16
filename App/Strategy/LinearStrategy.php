@@ -6,8 +6,6 @@ use App\Values\Product;
 
 class LinearStrategy
 {
-
-
     /**
      * @param Product[] $inputArray
      * @return array

@@ -5,24 +5,28 @@ namespace App\Validators\Combine;
 
 use Respect\Validation\Validator as v;
 
-class CombineValidator {
+class CombineValidator
+{
 
     private $errors = [];
     private $inputData;
 
-    public function setInput(array $input) {
+    public function setInput(array $input)
+    {
         $this->inputData = $input;
         return $this;
     }
 
-    public function validate():bool {
+    public function validate(): bool
+    {
         /**
          * TODO validate 'sum', 'algo', 'source'
          */
         return true;
     }
 
-    public function getErrors() {
+    public function getErrors()
+    {
         return $this->errors;
     }
 }

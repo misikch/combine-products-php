@@ -3,11 +3,10 @@
 namespace App\Factories\Repositories\Product;
 
 
-
 use App\Databases\DBPool\DBPool;
 
-class ProductRepositoryFactory {
-
+class ProductRepositoryFactory
+{
     protected $dbPool;
 
     public function __construct(DBPool $dbPool)

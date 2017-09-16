@@ -3,10 +3,12 @@
 namespace App\Strategy;
 
 
-class StrategyTypes {
+class StrategyTypes
+{
     const LINEAR = 'LINEAR';
 
-    public static function getAll(): array {
+    public static function getAll(): array
+    {
         return [
             self::LINEAR,
         ];

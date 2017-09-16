@@ -2,10 +2,12 @@
 
 namespace App\Constants;
 
-class SourceTypes {
+class SourceTypes
+{
     const CSV = 'csv';
 
-    public static function getAll():array {
+    public static function getAll(): array
+    {
         return [
             self::CSV,
         ];
