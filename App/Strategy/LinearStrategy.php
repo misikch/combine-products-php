@@ -52,7 +52,7 @@ class LinearStrategy
             $currentSum = 0;
         }
 
-        if ($foundId) {
+        if (null !== $foundId) {
             return $inputArray[$foundId];
         }
 
