@@ -1,5 +1,8 @@
 # Подбор продуктов на определенную сумму
 
+###Status
+[![Build Status](https://travis-ci.org/misikch/combine-products-php.svg?branch=master)](https://travis-ci.org/misikch/combine-products-php)
+
 ## Требования
 
 * PHP >= 7.0
