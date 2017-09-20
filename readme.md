@@ -1,6 +1,6 @@
 # Подбор продуктов на определенную сумму
 
-###Status
+### Status
 [![Build Status](https://travis-ci.org/misikch/combine-products-php.svg?branch=master)](https://travis-ci.org/misikch/combine-products-php)
 
 ## Требования
