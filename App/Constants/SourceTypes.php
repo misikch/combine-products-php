@@ -8,8 +8,7 @@ class SourceTypes
 
     public static function getAll(): array
     {
-        return [
-            self::CSV,
-        ];
+    	$selfClass = new \ReflectionClass(self::class);
+    	return $selfClass->getConstants();
     }
 }
